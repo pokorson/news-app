@@ -1,5 +1,6 @@
 import React from "react";
 
+import ArticlesListItem from "./ArticlesListItem";
 import { Article } from "./types";
 
 interface ArticlesListPageProps {
@@ -10,8 +11,8 @@ const ArticlesListPage = (props: ArticlesListPageProps) => {
   return (
     <div>
       <h1>Articles</h1>
-      {props.articles.map(art => (
-        <div>{art.title}</div>
+      {props.articles.map(article => (
+        <ArticlesListItem article={article} />
       ))}
     </div>
   );
