@@ -1,1 +1,1 @@
-export { default } from './ArticlesListPage';
+export { default } from './ArticlesListPageContainer';
