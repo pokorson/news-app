@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { format, parseISO } from "date-fns";
 import Button from "../../ui/Button";
 import { Article } from "../../articles/types";
 import styles from "./ArticleListItem.module.scss";
@@ -13,6 +14,7 @@ const defaultImageUrl =
 
 const ArticleListItem = (props: ArticleListItemProps) => {
   const { article } = props;
+  const formattedDate = format(parseISO(article.publishedAt), "MMM d, yyyy");
 
   return (
     <div className={styles["ArticleListItem"]}>
@@ -22,7 +24,7 @@ const ArticleListItem = (props: ArticleListItemProps) => {
         alt="article"
       />
       <div className={styles["ArticleMeta"]}>
-        <span>{article.publishedAt}</span>
+        <span>{formattedDate}</span>
         {article.author && <span>{article.author}</span>}
         <span className={styles["ArticleSource"]}>{article.source.name}</span>
       </div>

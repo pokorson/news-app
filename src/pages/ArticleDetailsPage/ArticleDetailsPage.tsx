@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { format, parseISO } from "date-fns";
 
 import Button from "../../ui/Button";
 import { Article } from "../../articles/types"; // TODO: Refactor to use articles/index.js
@@ -15,6 +16,7 @@ const defaultImageUrl =
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { article } = props;
+  const formattedDate = format(parseISO(article.publishedAt), "MMM d, yyyy");
 
   return (
     <div className={styles["ArticleDetailsPage"]}>
@@ -29,6 +31,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       </div>
       <div className={styles["ArticleDetailsContainer"]}>
         <div className={styles["ArticleMeta"]}>
+          <span>{formattedDate}</span>
           {article.author && <span>{article.author}</span>}
           <span className={styles["ArticleSource"]}>{article.source.name}</span>
         </div>
