@@ -2,6 +2,7 @@ import React from "react";
 
 import ArticlesListItem from "./ArticlesListItem";
 import { Article } from "./types";
+import styles from "./ArticleListPage.module.scss";
 
 interface ArticlesListPageProps {
   articles: Article[];
@@ -9,11 +10,13 @@ interface ArticlesListPageProps {
 
 const ArticlesListPage = (props: ArticlesListPageProps) => {
   return (
-    <div>
-      <h1>Articles</h1>
-      {props.articles.map(article => (
-        <ArticlesListItem article={article} />
-      ))}
+    <div className={styles["ArticlesListPage"]}>
+      <h1 className={styles["AritclesListPageTitle"]}>Articles</h1>
+      <div className={styles["ArticlesListContainer"]}>
+        {props.articles.map(article => (
+          <ArticlesListItem article={article} />
+        ))}
+      </div>
     </div>
   );
 };
