@@ -29,9 +29,8 @@ const ArticleListItem = (props: ArticleListItemProps) => {
       <h3 className={styles["ArticleTitle"]}>{article.title}</h3>
       <p className={styles["ArticleDescription"]}>{article.description}</p>
       <Link to={{ pathname: "article-details", state: { article } }}>
-        read more
+        <Button label="Read more" />
       </Link>
-      <Button label="Read more" onClick={() => {}} />
     </div>
   );
 };
