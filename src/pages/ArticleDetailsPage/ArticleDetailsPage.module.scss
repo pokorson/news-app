@@ -1,0 +1,56 @@
+@import "../../styles/colors.scss";
+
+.ArticleDetailsPage {
+  padding: 80px 53px;
+}
+
+.PageTitle {
+  font-weight: 500;
+  font-size: 32px;
+  color: #465252;
+}
+
+.ArticleImageContainer {
+  text-align: center;
+}
+
+.ArticleImage {
+  margin: 20px 0;
+  max-height: 470px;
+  width: auto;
+}
+
+.ArticleDetailsContainer {
+  max-width: 600px;
+  margin: auto;
+}
+
+.ArticleMeta {
+  font-size: 14px;
+  color: #606060;
+
+  >span {
+    margin-right: 16px;
+  }
+}
+
+.ArticleTitle {
+  font-size: 24px;
+  margin-bottom: 17px;
+  margin-top: 9px;
+}
+
+.ArticleSource {
+  color: #493BE1;
+}
+
+.ArticleContent {
+  margin-bottom: 30px;
+  font-size: 17px;
+  text-align: justify;
+  color: $font-dark;
+}
+
+.ArticleSourceButton {
+  max-width: 300px;
+}

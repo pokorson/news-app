@@ -5,7 +5,7 @@ import styles from "./Button.module.scss";
 interface ButtonProps {
   label: string;
   btnType: "primary" | "secondary";
-  onClick: any;
+  onClick?: any; // TODO add proper type
   className?: string;
 }
 

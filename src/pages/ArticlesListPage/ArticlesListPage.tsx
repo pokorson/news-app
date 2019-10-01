@@ -3,7 +3,7 @@ import React from "react";
 import Button from "../../ui/Button";
 
 import ArticlesListItem from "./ArticlesListItem";
-import { Article } from "./types";
+import { Article } from "../../articles/types";
 import styles from "./ArticleListPage.module.scss";
 
 interface ArticlesListPageProps {

@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../../ui/Button";
-import { Article } from "./types";
+import { Article } from "../../articles/types";
 import styles from "./ArticleListItem.module.scss";
 
 interface ArticleListItemProps {
@@ -27,6 +28,9 @@ const ArticleListItem = (props: ArticleListItemProps) => {
       </div>
       <h3 className={styles["ArticleTitle"]}>{article.title}</h3>
       <p className={styles["ArticleDescription"]}>{article.description}</p>
+      <Link to={{ pathname: "article-details", state: { article } }}>
+        read more
+      </Link>
       <Button label="Read more" onClick={() => {}} />
     </div>
   );

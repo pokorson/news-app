@@ -1,14 +1,15 @@
 interface ArticleSource {
-  id: number;
+  id: number | string | null;
   name: string;
 }
 
 export interface Article {
   source: ArticleSource;
-  author: string;
+  author: string | null;
   content: string;
   title: string;
-  urlToImage: string;
+  url: string;
+  urlToImage: string | null;
   description: string;
   publishedAt: string;
 }
