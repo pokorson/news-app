@@ -1,0 +1,32 @@
+.ArticleListItem {
+  padding: 10px;
+}
+
+.ArticleImage {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ArticleMeta {
+  font-size: 14px;
+  color: #606060;
+
+  >span {
+    margin-right: 16px;
+  }
+}
+
+.ArticleSource {
+  color: #493BE1;
+}
+
+.ArticleTitle {
+  font-size: 24px;
+  margin-bottom: 17px;
+  margin-top: 9px;
+}
+
+.ArticleDescription {
+  font-size: 17px;
+  text-align: justify;
+}
