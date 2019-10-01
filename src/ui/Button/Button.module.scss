@@ -1,0 +1,38 @@
+@import "../../styles/colors.scss";
+
+$btn-hover: #3022C8;
+
+.ButtonPrimary {
+  background-color: $main-blue;
+  border: none;
+  color: $font-white;
+  width: 100%;
+  text-align: center;
+  padding: 17px 20px 16px 20px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: $btn-hover;
+  }
+}
+
+.ButtonSecondary {
+  background-color: transparent;
+  border: 1px solid $main-blue;
+  color: $main-blue;
+  width: 100%;
+  text-align: center;
+  padding: 17px 20px 16px 20px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: $btn-hover;
+    border: none;
+    color: $font-white;
+    width: 100%;
+    text-align: center;
+    padding: 17px 20px 16px 20px;
+    font-size: 16px;
+
+  }
+}

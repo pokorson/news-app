@@ -1,5 +1,7 @@
 import React from "react";
 
+import Button from "../../ui/Button";
+
 import ArticlesListItem from "./ArticlesListItem";
 import { Article } from "./types";
 import styles from "./ArticleListPage.module.scss";
@@ -14,9 +16,10 @@ const ArticlesListPage = (props: ArticlesListPageProps) => {
       <h1 className={styles["AritclesListPageTitle"]}>Articles</h1>
       <div className={styles["ArticlesListContainer"]}>
         {props.articles.map(article => (
-          <ArticlesListItem article={article} />
+          <ArticlesListItem key={article.title} article={article} />
         ))}
       </div>
+      <Button label="Show More" onClick={() => {}} btnType="secondary"></Button>
     </div>
   );
 };

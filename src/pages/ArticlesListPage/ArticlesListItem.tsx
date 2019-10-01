@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../ui/Button";
 import { Article } from "./types";
 import styles from "./ArticleListItem.module.scss";
 
@@ -15,7 +16,6 @@ const ArticleListItem = (props: ArticleListItemProps) => {
         className={styles["ArticleImage"]}
         src={article.urlToImage}
         alt="article"
-        width="100px"
       />
       <div className={styles["ArticleMeta"]}>
         <span>{article.publishedAt}</span>
@@ -24,7 +24,7 @@ const ArticleListItem = (props: ArticleListItemProps) => {
       </div>
       <h3 className={styles["ArticleTitle"]}>{article.title}</h3>
       <p className={styles["ArticleDescription"]}>{article.description}</p>
-      <button>read more</button>
+      <Button label="Read more" onClick={() => {}} />
     </div>
   );
 };
