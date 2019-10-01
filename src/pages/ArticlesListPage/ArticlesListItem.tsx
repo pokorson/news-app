@@ -7,6 +7,9 @@ interface ArticleListItemProps {
   article: Article;
 }
 
+const defaultImageUrl =
+  "https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg";
+
 const ArticleListItem = (props: ArticleListItemProps) => {
   const { article } = props;
 
@@ -14,7 +17,7 @@ const ArticleListItem = (props: ArticleListItemProps) => {
     <div className={styles["ArticleListItem"]}>
       <img
         className={styles["ArticleImage"]}
-        src={article.urlToImage}
+        src={article.urlToImage || defaultImageUrl}
         alt="article"
       />
       <div className={styles["ArticleMeta"]}>
