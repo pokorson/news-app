@@ -23,7 +23,7 @@ const ArticleListItem = (props: ArticleListItemProps) => {
       />
       <div className={styles["ArticleMeta"]}>
         <span>{article.publishedAt}</span>
-        <span>{article.author}</span>
+        {article.author && <span>{article.author}</span>}
         <span className={styles["ArticleSource"]}>{article.source.name}</span>
       </div>
       <h3 className={styles["ArticleTitle"]}>{article.title}</h3>
