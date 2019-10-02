@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setting up env
+
+In order to connect with news API secret key needs to be provided.
+Before runnig app create your own `.env.local` file, copy all variables from template file `.env` and fill with values for your environment.
+
 ## Available Scripts
 
 In the project directory, you can run:
