@@ -9,17 +9,21 @@ const defaultFilters: ArticleFilters = {
 
 const ArticlesListPageContainer = () => {
   const [articles, updateArticles] = useState([] as Article[]);
+  const [articlesError, updateArticlesError] = useState("");
   const [page, updatePage] = useState(1);
 
   const [filters, updateFilters] = useState(defaultFilters);
 
   useEffect(() => {
+    updateArticlesError("tests")
     fetchArticles({ filters, page }).then((newArticles: Article[]) => {
       if (page > 1) {
         updateArticles([...articles, ...newArticles]);
       } else {
         updateArticles(newArticles);
       }
+    }).catch(err => {
+      updateArticlesError("There was an error while loading articles. Try again later :(")
     });
   }, [filters, page]);
 
@@ -31,6 +35,7 @@ const ArticlesListPageContainer = () => {
   return (
     <ArticlesListPage
       articles={articles}
+      articlesError={articlesError}
       filters={filters}
       updateFilters={updateArticleFilters}
       loadMoreArticles={() => updatePage(page + 1)}
