@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { fetchArticles } from "../../articles/api";
 import ArticlesListPage from "./ArticlesListPage";
-import articlesData from "./data.json";
 
 const ArticlesListPageContainer = () => {
-  return <ArticlesListPage articles={articlesData.articles} />;
+  const [articles, updateArticles] = useState([]);
+
+  useEffect(() => {
+    fetchArticles().then(updateArticles);
+  }, []);
+
+  return <ArticlesListPage articles={articles} />;
 };
 
 export default ArticlesListPageContainer;
