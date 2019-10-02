@@ -20,7 +20,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <div className={styles["ArticleDetailsPage"]}>
-      <h1 className={styles["PageTitle"]}>{article.title}</h1>
+      <h1 className={styles["PageTitle"]} data-test="page-title">{article.title}</h1>
       <Link to="/">Return to articles list</Link>
       <div className={styles["ArticleImageContainer"]}>
         <img
@@ -36,7 +36,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           <span className={styles["ArticleSource"]}>{article.source.name}</span>
         </div>
         <h3 className={styles["ArticleTitle"]}>{article.title}</h3>
-        <p className={styles["ArticleContent"]}>{article.content}</p>
+        <p className={styles["ArticleContent"]} data-test="article-content">{article.content}</p>
         <a href={article.url} target="_blank">
           <Button
             className={styles["ArticleSourceButton"]}

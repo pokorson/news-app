@@ -8,7 +8,7 @@ import ArticlesListItem from "./ArticlesListItem";
 
 import styles from "./ArticleListPage.module.scss";
 
-interface ArticlesListPageProps {
+export interface ArticlesListPageProps {
   articles: Article[];
   filters: ArticleFilters;
   clearFilters: any;
@@ -25,7 +25,7 @@ const ArticlesListPage = (props: ArticlesListPageProps) => {
         clearFilters={props.clearFilters}
         updateFilters={props.updateFilters}
       />
-      <div className={styles["ArticlesListContainer"]}>
+      <div className={styles["ArticlesListContainer"]} data-test="articles-list-container">
         {props.articles.map(article => (
           <ArticlesListItem key={article.title} article={article} />
         ))}
