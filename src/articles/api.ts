@@ -3,34 +3,37 @@ import { subMonths, subWeeks, startOfDay } from "date-fns";
 
 import { ArticleFilters } from "./types";
 
+const formatDate = (date: Date) => {
+  return date.toISOString().slice(0, 10);
+};
+
 const parseDateRange = (dateRange: string) => {
-  const now = new Date();
-  const nowISO = now.toISOString();
+  const nowISO = formatDate(new Date());
   switch (dateRange) {
     case "month":
       return {
-        from: nowISO,
-        to: subMonths(now, 1).toISOString()
+        to: nowISO,
+        from: formatDate(subMonths(new Date(), 1))
       };
     case "week":
       return {
         to: nowISO,
-        from: subWeeks(now, 1).toISOString()
+        from: formatDate(subWeeks(new Date(), 1))
       };
     case "day":
       return {
         to: nowISO,
-        from: startOfDay(now).toISOString()
+        from: formatDate(startOfDay(new Date()))
       };
     default:
       return {
         to: nowISO,
-        from: subMonths(now, 1).toISOString()
+        from: formatDate(subMonths(new Date(), 1))
       };
   }
 };
 
-const buildQuery = ({
+export const buildQuery = ({
   filters,
   page
 }: {
