@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { format, parseISO } from "date-fns";
 
 import Button from "../../ui/Button";
-import { Article } from "../../articles/types"; // TODO: Refactor to use articles/index.js
+import { Article } from "../../articles/types";
 
 import styles from "./ArticleDetailsPage.module.scss";
 
