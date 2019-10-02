@@ -28,8 +28,14 @@ const parseDateRange = (dateRange: any) => {
   }
 };
 
-export const fetchArticles = (filters: any) => {
-  let query = `q=${filters.topic.value}`;
+export const fetchArticles = ({
+  filters,
+  page = 1
+}: {
+  filters: any;
+  page: number;
+}) => {
+  let query = `page=${page}&q=${filters.topic.value}`;
   if (filters.sortBy) {
     query = `${query}&sortBy=${filters.sortBy.value}`;
   }

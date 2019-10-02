@@ -13,6 +13,7 @@ interface ArticlesListPageProps {
   filters: any;
   clearFilters: any;
   updateFilters: any;
+  loadMoreArticles: any;
 }
 
 const ArticlesListPage = (props: ArticlesListPageProps) => {
@@ -29,7 +30,11 @@ const ArticlesListPage = (props: ArticlesListPageProps) => {
           <ArticlesListItem key={article.title} article={article} />
         ))}
       </div>
-      <Button label="Show More" onClick={() => {}} btnType="secondary"></Button>
+      <Button
+        label="Show More"
+        onClick={props.loadMoreArticles}
+        btnType="secondary"
+      ></Button>
     </div>
   );
 };
