@@ -1,7 +1,9 @@
 import apiClient from "../apiClient";
 import { subMonths, subWeeks, startOfDay } from "date-fns";
 
-const parseDateRange = (dateRange: any) => {
+import { ArticleFilters } from "./types";
+
+const parseDateRange = (dateRange: string) => {
   const now = new Date();
   const nowISO = now.toISOString();
   switch (dateRange) {
@@ -28,21 +30,35 @@ const parseDateRange = (dateRange: any) => {
   }
 };
 
-export const fetchArticles = ({
+const buildQuery = ({
   filters,
-  page = 1
+  page
 }: {
-  filters: any;
+  filters: ArticleFilters;
   page: number;
 }) => {
-  let query = `page=${page}&q=${filters.topic.value}`;
+  let query = `page=${page}&q=${filters.topic}`;
+
   if (filters.sortBy) {
-    query = `${query}&sortBy=${filters.sortBy.value}`;
+    query = `${query}&sortBy=${filters.sortBy}`;
   }
   if (filters.date) {
     const { from, to } = parseDateRange(filters.date);
     query = `${query}&from=${from}&to=${to}`;
   }
+
+  return query;
+};
+
+export const fetchArticles = ({
+  filters,
+  page = 1
+}: {
+  filters: ArticleFilters;
+  page: number;
+}) => {
+  const query = buildQuery({ filters, page });
+
   return apiClient
     .get(`/everything?${query}`)
     .then(response => response.data.articles);

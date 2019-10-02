@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "../../ui/Button";
 
-import { Article } from "../../articles/types";
+import { Article, ArticleFilters } from "../../articles/types";
 import ArticlesListFilters from "./ArticlesListFilters/ArticlesListFilters";
 import ArticlesListItem from "./ArticlesListItem";
 
@@ -10,7 +10,7 @@ import styles from "./ArticleListPage.module.scss";
 
 interface ArticlesListPageProps {
   articles: Article[];
-  filters: any;
+  filters: ArticleFilters;
   clearFilters: any;
   updateFilters: any;
   loadMoreArticles: any;

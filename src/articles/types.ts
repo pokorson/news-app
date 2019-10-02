@@ -13,3 +13,9 @@ export interface Article {
   description: string;
   publishedAt: string;
 }
+
+export interface ArticleFilters {
+  topic: "tech" | "travel" | "politics" | "sports";
+  date?: "month" | "week" | "day";
+  sortBy?: "popularity" | "publishedAt";
+}

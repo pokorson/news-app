@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { fetchArticles } from "../../articles/api";
 import ArticlesListPage from "./ArticlesListPage";
-import { Article } from "../../articles/types";
+import { Article, ArticleFilters } from "../../articles/types";
 
-const defaultFilters = {
-  topic: { value: "tech", label: "Tech" }
+const defaultFilters: ArticleFilters = {
+  topic: "tech"
 };
 
 const ArticlesListPageContainer = () => {
@@ -21,9 +21,9 @@ const ArticlesListPageContainer = () => {
         updateArticles(newArticles);
       }
     });
-  }, [articles, filters, page]);
+  }, [filters, page]);
 
-  const updateArticleFilters = (filterValue: any) => {
+  const updateArticleFilters = (filterValue: ArticleFilters) => {
     updateArticles([]);
     updateFilters({ ...filters, ...filterValue });
   };
