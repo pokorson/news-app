@@ -5,11 +5,29 @@ import ArticlesListPage from "./ArticlesListPage";
 const ArticlesListPageContainer = () => {
   const [articles, updateArticles] = useState([]);
 
-  useEffect(() => {
-    fetchArticles().then(updateArticles);
-  }, []);
+  const [filters, updateFilters] = useState({
+    topic: { value: "tech", label: "Tech" }
+  });
 
-  return <ArticlesListPage articles={articles} />;
+  useEffect(() => {
+    fetchArticles(filters).then(updateArticles);
+  }, [filters]);
+
+  const updateArticleFilters = (filterValue: any) => {
+    updateArticles([]);
+    updateFilters({ ...filters, ...filterValue });
+  };
+
+  return (
+    <ArticlesListPage
+      articles={articles}
+      filters={filters}
+      updateFilters={updateArticleFilters}
+      clearFilters={() =>
+        updateFilters({ topic: { value: "tech", label: "Tech" } })
+      }
+    />
+  );
 };
 
 export default ArticlesListPageContainer;
