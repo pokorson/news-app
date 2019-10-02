@@ -21,7 +21,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <div className={styles["ArticleDetailsPage"]}>
       <h1 className={styles["PageTitle"]} data-test="page-title">{article.title}</h1>
-      <Link to="/">Return to articles list</Link>
+      <Link className={styles["BackLink"]} to="/">Return to articles list</Link>
       <div className={styles["ArticleImageContainer"]}>
         <img
           className={styles["ArticleImage"]}
